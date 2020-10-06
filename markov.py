@@ -11,8 +11,12 @@ def open_and_read_file(file_path):
     """
 
     # your code goes here
+    content = open(file_path).read()
 
-    return 'Contents of your file as one long string'
+    return content
+
+
+# print(open_and_read_file('green-eggs.txt')
 
 
 def make_chains(text_string):
@@ -39,12 +43,27 @@ def make_chains(text_string):
         >>> chains[('there','juanita')]
         [None]
     """
+    # How is this file coming in here
 
+    # split file text
+    words = text_string.split()
+
+    # Initiate empty dictionary
     chains = {}
 
-    # your code goes here
+    for i in range(len(words) - 1):
+        key = (words[i], words[i + 1])
+        # if the key
+        check = chains.get(key, 0)
+        if check == 0:
 
-    return chains
+        chains[key] = []
+
+    print(chains)
+
+
+make_chains("green-eggs.txt")
+# return chains
 
 
 def make_text(chains):
