@@ -88,6 +88,7 @@ def make_text(chains):
         words.append(random_value)
 
     print(words)
+    return words
 
 
 input_path = 'green-eggs.txt'
